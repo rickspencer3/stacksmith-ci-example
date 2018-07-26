@@ -6,6 +6,7 @@ before_script:
   - mkdir -p stacksmith-cli
   - wget https://github.com/bitnami/stacksmith-cli/releases/download/v0.1/stacksmith -O stacksmith-cli/stacksmith
   - export PATH=$PATH:$PWD/stacksmith-cli
+  - stacksmith auth login --access-loken $STACKSMITH_ACCESS_TOKEN
 
 script:
   - go test -v ./...
@@ -13,4 +14,4 @@ script:
 
 after_success:
   - echo TRIGGER STACKSMITH
-  - ls -l
+  - stacksmith build
