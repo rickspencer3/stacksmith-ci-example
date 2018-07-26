@@ -1,4 +1,4 @@
-id: bitnami-azure/apps/890a14d0-7320-0136-b2a0-1e665ac899ba
+appId: bitnami-azure/apps/890a14d0-7320-0136-b2a0-1e665ac899ba
 files:
   userUploads:
     - stacksmith-ci-example
