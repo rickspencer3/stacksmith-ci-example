@@ -13,7 +13,4 @@ before_script:
 script:
   - go test -v ./...
   - go build
-
-after_success:
-  - echo TRIGGER STACKSMITH
   - stacksmith build
