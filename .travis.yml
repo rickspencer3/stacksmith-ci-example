@@ -8,7 +8,7 @@ before_script:
   - chmod +x stacksmith-cli/stacksmith
   - export PATH=$PATH:$PWD/stacksmith-cli
   
-  - stacksmith auth login --access-loken $STACKSMITH_ACCESS_TOKEN
+  - stacksmith auth login --access-token $STACKSMITH_ACCESS_TOKEN
 
 script:
   - go test -v ./...
