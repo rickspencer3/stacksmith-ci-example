@@ -6,3 +6,6 @@ before_script:
   - mkdir -p stacksmith-cli
   - wget https://github.com/bitnami/stacksmith-cli/releases/download/v0.1/stacksmith -O stacksmith-cli/stacksmith
   - export PATH=$PATH:$PWD/stacksmith-cli
+
+after_script:
+  - echo TEST TEST TEST
