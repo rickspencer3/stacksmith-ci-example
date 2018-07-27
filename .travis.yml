@@ -13,5 +13,12 @@ before_script:
 script:
   - go test -v ./...
   - go build -ldflags="-s -w"
+
+deploy:
+  - provider: script
   
-  - stacksmith build
+    script: stacksmith build
+    
+    skip_cleanup: true
+    on:
+      branch: master
