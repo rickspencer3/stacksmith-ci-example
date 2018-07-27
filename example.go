@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	listenAddr = flag.String("l", ":80", "listen address and port number")
+	listenAddr = flag.String("l", ":8080", "listen address and port number")
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
