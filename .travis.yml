@@ -12,5 +12,6 @@ before_script:
 
 script:
   - go test -v ./...
-  - go build
+  - go build -ldflags="-s -w"
+  
   - stacksmith build
