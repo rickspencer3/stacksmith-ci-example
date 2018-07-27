@@ -10,12 +10,13 @@ script:
   - go test -v ./...
   - go build -ldflags="-s -w"
 
+before_deploy:
+  - stacksmith auth login --access-token $STACKSMITH_ACCESS_TOKEN
+
 deploy:
   - provider: script
   
-    script: |
-      stacksmith auth login --access-token $STACKSMITH_ACCESS_TOKEN
-      stacksmith build
+    script: stacksmith build
     
     skip_cleanup: true
     on:
