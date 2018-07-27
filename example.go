@@ -19,5 +19,7 @@ func main() {
 	flag.Parse()
 
 	http.HandleFunc("/", handler)
+
+	log.Print("listen on", *listenAddr)
 	log.Fatal(http.ListenAndServe(*listenAddr, nil))
 }
