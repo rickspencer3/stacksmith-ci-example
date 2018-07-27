@@ -7,19 +7,23 @@ env:
   # - STACKSMITH_ACCESS_TOKEN=''
 
 install:
+  # install Stacksmith CLI tool
   - wget https://github.com/bitnami/stacksmith-cli/releases/download/v0.2/stacksmith-linux-amd64 -O /tmp/stacksmith
   - sudo install /tmp/stacksmith /usr/local/bin/stacksmith
 
 script:
+  # your good old application build steps here:
   - go test -v ./...
   - go build -ldflags="-s -w"
+  # (this puts executable in ./stacksmith-cli-example, consumed later by Stackerfile.yml)
 
 before_deploy:
   - stacksmith auth login --access-token $STACKSMITH_ACCESS_TOKEN
 
 deploy:
   - provider: script
-  
+
+    # Reads Stackerfile.yml
     script: stacksmith build
     
     skip_cleanup: true
