@@ -25,7 +25,8 @@ deploy:
 
     # Reads Stackerfile.yml
     script: stacksmith build
-
+    
+    skip_cleanup: true
     on:
       branch: master
 
