@@ -14,8 +14,7 @@ install:
 script:
   # your good old application build steps here:
   - go test -v ./...
-  - go build -ldflags="-s -w"
-  # (this puts executable in ./stacksmith-cli-example, consumed later by Stackerfile.yml)
+  - go build -ldflags="-s -w" -o my-application
 
 before_deploy:
   - stacksmith auth login --access-token $STACKSMITH_ACCESS_TOKEN
