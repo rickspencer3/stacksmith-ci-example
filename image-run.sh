@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec /opt/app/stacksmith-ci-example
+exec /opt/app/my-application
