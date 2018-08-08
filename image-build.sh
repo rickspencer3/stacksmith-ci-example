@@ -1,3 +1,3 @@
 #!/bin/bash
 
-install -D ${UPLOADS_DIR}/stacksmith-ci-example /opt/app/stacksmith-ci-example
+install -D ${UPLOADS_DIR}/my-application /opt/app/my-application
